@@ -1,0 +1,15 @@
+{
+  "name": "Crocodile Bangladesh Billing App",
+  "short_name": "Billing App",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f6f2",
+  "theme_color": "#2f6b2f",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAArklEQVR4nO3YwQkAMAwEwXr+p1tYwP0u4Yj1nH4TjKrL7s5tGQAAAAAAAAAAgO8TE1mQW2k6zR2vX8iPrQ3Htw7JtS1nnZypfNQG7r6Sw1u2v4z+9F1Y6B1W/wKp6vSo5QGfG6rC3VqQpAAAAAAAAAABgYH9tGwAAAIwURrVg9e1WAAAAAElFTkSuQmCC",
+      "sizes": "100x100",
+      "type": "image/png"
+    }
+  ]
+}

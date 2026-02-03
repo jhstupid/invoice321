@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crocodile Bangladesh Billing App</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="label">Billing Address</p>
+        <h1>Crocodile Bangladesh</h1>
+        <p class="tagline">Offline + Online Billing (Local Storage)</p>
+      </div>
+      <div class="status">
+        <span id="onlineStatus" class="pill">Checking...</span>
+        <span id="saveStatus" class="muted">Last saved: --</span>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <section class="invoice">
+        <div class="invoice-header">
+          <div class="field-grid">
+            <label>
+              Customer Name
+              <input id="customerName" type="text" placeholder="MD MASUM CHOWDHURY" />
+            </label>
+            <label>
+              Delivery Address
+              <input id="customerAddress" type="text" placeholder="220/1/B, EAST VASHANTEK, DHAKA" />
+            </label>
+            <label>
+              Mobile Number
+              <input id="customerPhone" type="tel" placeholder="+880 1927-384144" />
+            </label>
+          </div>
+          <div class="meta">
+            <label>
+              Date
+              <input id="invoiceDate" type="datetime-local" />
+            </label>
+            <label>
+              Bill No
+              <input id="invoiceNumber" type="text" />
+            </label>
+            <label>
+              Payment Type
+              <select id="paymentType">
+                <option>COD</option>
+                <option>Cash</option>
+                <option>Card</option>
+                <option>Mobile Banking</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Barcode</th>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>UOM</th>
+                <th>Unit Price</th>
+                <th>Discount %</th>
+                <th>Amount</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="itemsBody"></tbody>
+          </table>
+        </div>
+        <button id="addItem" class="ghost">+ Add Item</button>
+
+        <div class="summary">
+          <div>
+            <label>
+              In Words
+              <textarea id="amountWords" rows="2" readonly></textarea>
+            </label>
+            <label>
+              Terms & Conditions
+              <textarea id="terms" rows="4" placeholder="Items can be exchanged within 7 days..."></textarea>
+            </label>
+          </div>
+          <div class="totals">
+            <div class="total-row">
+              <span>Sub Total</span>
+              <span id="subTotal">0.00</span>
+            </div>
+            <div class="total-row">
+              <label>
+                VAT %
+                <input id="vatRate" type="number" min="0" step="0.1" value="10" />
+              </label>
+              <span id="vatAmount">0.00</span>
+            </div>
+            <div class="total-row">
+              <label>
+                Shipping
+                <input id="shipping" type="number" min="0" step="0.01" value="0" />
+              </label>
+              <span id="shippingAmount">0.00</span>
+            </div>
+            <div class="total-row total">
+              <span>Total</span>
+              <span id="total">0.00</span>
+            </div>
+            <div class="total-row highlight">
+              <span>Due Amount</span>
+              <span id="due">0.00</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="actions">
+        <button id="newInvoice">Create New</button>
+        <button id="printInvoice">Print Preview</button>
+        <button id="downloadCsv">Save as CSV</button>
+        <button id="exportJson">Export JSON</button>
+        <label class="file-input">
+          Import JSON
+          <input id="importJson" type="file" accept="application/json" />
+        </label>
+        <button id="clearStorage" class="danger">Clear Local Storage</button>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <p>Planner's Tower, Level-16, 13/A, Sonargaon Road, Bangla Motor, Dhaka</p>
+      <p>Phone: +880 140 44 06833 | Email: crocodilebdhq@gmail.com</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
